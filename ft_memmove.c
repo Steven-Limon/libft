@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 void *ft_memmove(void *dst, const void *src, size_t len)
 {
 	int i;
@@ -31,32 +32,34 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	free(buffer);
 	return (dst);
 }
-void *ft_memmove(void *dst, const void *src, size_t len)
+*/
+#include "libft.h"
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 	byte	*src_ucp;
 	byte	*dst_ucp;
 
 	i = 0;
 	j = len;
-	src_ucp = src;
-	dst_ucp = dst;
-	if(src < dst && dst < src[j] + n)
+	src_ucp = (byte *)src;
+	dst_ucp = (byte *)dst;
+	if(src < dst && dst_ucp < src_ucp + len)
 	{
-		while (j > n)
+		while (j > len)
 		{
-			[j] = ((unsigned char *)buffer)[j];
+			dst_ucp[j] = src_ucp[j];
 			j--;
 		}
 	}
 	else
 	{
-	while(i < n)
-	{
-		((unsigned char *)dst)[i] = ((unsigned char *)buffer)[i];
-		i++;
+		while(i < len)
+		{
+			dst_ucp[i] = src_ucp[i];
+			i++;
+		}
 	}
-}
 	return (dst);
 }

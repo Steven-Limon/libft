@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+#include "libft.h"
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int		i;
+	size_t	i;
 	byte	*tmp_s1;
 	byte	*tmp_s2;
 
-	i = 0;	
+	i = 0;
 	tmp_s1= (byte *)s1;
 	tmp_s2= (byte *)s2;
 	while (i < n)

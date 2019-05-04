@@ -10,15 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-char *ft_strdup(const char *s1)
+#include "libft.h"
+char	*ft_strdup(const char *s1)
 {
 	int count;
 	int i;
 	char* new_s;
 
 	count = 0;
-	while (s[count])
+	i = 0;
+	while (s1[count])
 		count++;
 	new_s = (char *)malloc(sizeof(char) * count);
 	if (new_s == 0)
